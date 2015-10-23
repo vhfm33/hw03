@@ -3,7 +3,7 @@
         <meta charset="utf-8">
         <title>Trabalho 03 - Desenvolvimento Web </title>
         <meta name="viewport" content="width=device-width,initial-scale=1">
-        <link rel="shortcut icon" href="favicon.ico">
+        <!-- <link rel="shortcut icon" href="favicon.ico"> -->
         <link rel="stylesheet" href="main.css">
         <script src="main.js"></script>
     </head>
@@ -20,16 +20,16 @@
                     <div class="header-right">
                         <nav class="menu-nav">
                             <ul class="menu">
-                                <li><a id="lnk-home" href="index.html" class="button">Home</a></li>
-                                <li><a id="lnk-cadastro" href="cadastro.html" class="button">Cadastro</a></li>
-                                <li><a id="lnk-agenda" href="agenda.html" class="button">Agenda</a></li>
+                                <li><a id="lnk-home" href="#" onclick="showPage('home')" class="button">Home</a></li>
+                                <li><a id="lnk-cadastro" href="#" onclick="showPage('cadastro')" class="button">Cadastro</a></li>
+                                <li><a id="lnk-agenda" href="#" onclick="showPage('agenda')" class="button">Agenda</a></li>
                             </ul>
                         </nav>
                     </div>
                     <div class="clearfix"></div>
                 </header>
             </div>
-            <div class="header-slider">
+            <div id="slider" class="header-slider">
                 <div id="quote-0" class="header-quote">
                     <p>
                     Quote 0 - Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
@@ -58,7 +58,7 @@
                     remaining essentially unchanged. It was popularised in the 1960s with the release</p>
                 </div>
             </div>
-            <div class="container-content content-home">
+            <div id="page-home" class="container-content">
               <div class="reviews">
                 <ul>
                   <li>
@@ -79,6 +79,49 @@
                   </li>
                 </ul>
                 </div>
+            </div>
+            <div id="page-cadastro" class="container-content" style="display:none;">
+              <div class="contacts">
+                <h1>Contacts</h1>
+  						</div>
+            </div>
+            <div id="page-agenda" class="container-content" style="display:none;">
+              <div class="form-container">
+            <div class="form-col">
+              <div class="InputAddOn">
+                <span class="InputAddOn-item">Nome</span>
+                <input type="text" id="name" class="InputAddOn-field">
+              </div>
+              <div class="InputAddOn">
+                <span class="InputAddOn-item">Email</span>
+                <input type="email" id="email"
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                    placeholder="teste@teste.com"
+                    required="required" class="InputAddOn-field">
+              </div>
+            </div>
+            <div class="form-col">
+              <div class="InputAddOn">
+                <span class="InputAddOn-item">Fone</span>
+                <input type="tel" id="phone" class="InputAddOn-field"
+                    pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$"
+                    placeholder="(XX) XXXX-XXXX">
+              </div>
+              <div class="InputAddOn">
+                <span class="InputAddOn-item">Assunto</span>
+                <textarea rows="10" cols="80" id="sobre"></textarea>
+              </div>
+              <div class="note">
+                <span class="styler_color">Termos de uso:</span>
+                Do mesmo modo, o julgamento imparcial das eventualidades facilita a criação de todos os recursos funcionais envolvidos.
+              </div>
+              <div class="checkbox">
+                <input name="disclaimer" type="checkbox" value="" id="disclaimer">
+                <label for="disclaimer">Li o lero lero</label>
+              </div>
+              <input type="submit" value="ENVIAR" class="button send">
+            </div>
+          </div>
             </div>
             <footer>
                 <div class="container">
