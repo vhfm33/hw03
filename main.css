@@ -65,12 +65,17 @@ h1 {
 .menu a { margin: 10px; }
 .header-slider {
     background-color: #eaeaea;
-    height: 150px;
+    height: 160px;
     padding: 10px;
 }
 
 .header-quote {
   text-align: justify;
+}
+
+.header-quote img {
+  float: left;
+  padding-right: 15px;
 }
 
 .container {
@@ -79,9 +84,14 @@ h1 {
   backgroud-color: red !important;
 }
 
+.container-content {
+    text-align: center;
+}
+
 .reviews {
   display: inline-block;
   height: 300px;
+  text-align: left;
 }
 .reviews ul li {
     width:250px;
@@ -100,6 +110,11 @@ h1 {
     font-style: italic;
     line-height: 22px;
     padding: 10px 10px 0 10px;
+}
+
+.reviews ul li img {
+  float: left;
+  padding-right: 10px;
 }
 
 footer {
@@ -135,6 +150,7 @@ footer {
 .form-container {
   width: 80%;
   margin: 0 auto;
+  text-align: left;
 }
 
 .form-col {

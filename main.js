@@ -1,7 +1,7 @@
 var current_quote = 0;
 setInterval(function(){
   showQuote();
-}, 3000);
+}, 3000000);
 
 var showQuote = function() {
   current_quote++;
