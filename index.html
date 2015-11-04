@@ -61,6 +61,11 @@
                     remaining essentially unchanged. It was popularised in the 1960s with the release</p>
                 </div>
             </div>
+
+            <div id="main-page" class="container-content">
+
+            </div>
+
             <div id="page-home" class="container-content">
               <div class="reviews">
                 <ul>
@@ -84,47 +89,104 @@
                 </div>
             </div>
             <div id="page-cadastro" class="container-content" style="display:none;">
-              <div class="contacts">
-                <h1>Contacts</h1>
-  						</div>
+              <div class="form-container">
+                <div class="form-col">
+                  <div class="InputAddOn">
+                    <span class="InputAddOn-item">Nome</span>
+                    <input type="text" id="name" class="InputAddOn-field">
+                  </div>
+                  <div class="InputAddOn">
+                    <span class="InputAddOn-item">Nascimento</span>
+                    <input type="date" id="nascimento" class="InputAddOn-field">
+                  </div>
+                  <div class="InputAddOn">
+                    <span class="InputAddOn-item">CPF</span>
+                    <input type="text" id="cpf" class="InputAddOn-field"
+                          pattern="[0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}"
+                          placeholder="000.000.000-00">
+                  </div>
+                  <div class="InputAddOn">
+                    <span class="InputAddOn-item">Profissão</span>
+                    <select class="InputAddOn-field" id="profissao">
+                      <option value="option">option</option>
+                      <option value="option">option</option>
+                      <option value="option">option</option>
+                      <option value="option">option</option>
+                      <option value="option">option</option>
+                      <option value="option">option</option>
+                    </select>
+                  </div>
+                  <div class="InputAddOn">
+                    <span class="InputAddOn-item">Email</span>
+                    <input type="email" id="email"
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                        placeholder="teste@teste.com"
+                        required="required" class="InputAddOn-field">
+                  </div>
+                  <div class="InputAddOn">
+                    <span class="InputAddOn-item">Telefone</span>
+                    <input type="tel" id="phone" class="InputAddOn-field"
+                        pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$"
+                        placeholder="(XX) XXXX-XXXX">
+                  </div>
+
+                  <input type="submit" value="CADASTRAR" class="button send">
+
+                </div>
+              </div>
             </div>
             <div id="page-agenda" class="container-content" style="display:none;">
               <div class="form-container">
-            <div class="form-col">
-              <div class="InputAddOn">
-                <span class="InputAddOn-item">Nome</span>
-                <input type="text" id="name" class="InputAddOn-field">
-              </div>
-              <div class="InputAddOn">
-                <span class="InputAddOn-item">Email</span>
-                <input type="email" id="email"
-                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-                    placeholder="teste@teste.com"
-                    required="required" class="InputAddOn-field">
+                <div class="form-col">
+                  <div class="InputAddOn">
+                    <span class="InputAddOn-item">Descrição</span>
+                    <input type="text" id="description" class="InputAddOn-field">
+                  </div>
+                  <div class="InputAddOn">
+                    <span class="InputAddOn-item">Dia</span>
+                    <select class="InputAddOn-field" id="select-day">
+                      <option value="2">Segunda</option>
+                      <option value="3">Terça</option>
+                      <option value="4">Quarta</option>
+                      <option value="5">Quinta</option>
+                      <option value="6">Sexta</option>
+                    </select>
+                    <input type="submit" value="ADD" class="button send" onclick="addDay()">
+                  </div>
+                  <div class="box-container">
+                  <div class="box">
+                    <img src="unchecked.png" alt="" id="img-02" />
+                      <p>
+                        Segunda</p>
+                        <p id="description-02"></p>
+                  </div>
+                  <div class="box">
+                    <img src="unchecked.png" alt="" id="img-03"/>
+                      <p>
+                        Terça</p>
+                        <p id="description-03"></p>
+                  </div>
+                  <div class="box">
+                    <img src="unchecked.png" alt="" id="img-04"/>
+                      <p>
+                        Quarta</p>
+                        <p id="description-04"></p>
+                  </div>
+                  <div class="box">
+                    <img src="unchecked.png" alt="" id="img-05"/>
+                      <p>
+                        Quinta</p>
+                        <p id="description-05"></p>
+                  </div>
+                  <div class="box">
+                    <img src="unchecked.png" alt="" id="img-06"/>
+                      <p>
+                        Sexta</p>
+                        <p id="description-06"></p>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="form-col">
-              <div class="InputAddOn">
-                <span class="InputAddOn-item">Fone</span>
-                <input type="tel" id="phone" class="InputAddOn-field"
-                    pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$"
-                    placeholder="(XX) XXXX-XXXX">
-              </div>
-              <div class="InputAddOn">
-                <span class="InputAddOn-item">Assunto</span>
-                <textarea rows="10" cols="80" id="sobre"></textarea>
-              </div>
-              <div class="note">
-                <span class="styler_color">Termos de uso:</span>
-                Do mesmo modo, o julgamento imparcial das eventualidades facilita a criação de todos os recursos funcionais envolvidos.
-              </div>
-              <div class="checkbox">
-                <input name="disclaimer" type="checkbox" value="" id="disclaimer">
-                <label for="disclaimer">Li o lero lero</label>
-              </div>
-              <input type="submit" value="ENVIAR" class="button send">
-            </div>
-          </div>
             </div>
             <footer>
                 <div class="container">
