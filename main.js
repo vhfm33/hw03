@@ -40,7 +40,7 @@ var showQuote = function() {
 
 var showPage = function(page) {
   document.getElementById("slider").style.display = "none";
-
+  var type, pattern, parent = "";
   if (page == "home") {
     document.getElementById("slider").style.display = "block";
     document.getElementById("page-home").style.display = "block";
@@ -49,9 +49,50 @@ var showPage = function(page) {
     document.getElementById("main-page").style.display = "none";
   } else if (page == "cadastro") {
     document.getElementById("page-home").style.display = "none";
-    document.getElementById("page-cadastro").style.display = "block";
     document.getElementById("page-agenda").style.display = "none";
-    document.getElementById("main-page").style.display = "none";
+    document.getElementById("main-page").innerHTML = "";
+    document.getElementById("main-page").style.display = "block";
+
+    parent = "box-name";
+    createDiv(parent);
+    createLabel("Nome", parent);
+    type = "text";
+    createInput(type, "", parent);
+
+    parent = "box-nascimento";
+    createDiv(parent);
+    createLabel("Nascimento", parent);
+    type = "text";
+    createInput(type, "", parent);
+
+    parent = "box-cpf";
+    createDiv(parent);
+    createLabel("CPF", parent);
+    pattern="[0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}"
+    type = "text";
+    createInput(type, pattern, parent);
+
+    parent = "box-profissao";
+    createDiv(parent);
+    createLabel("Profissão", parent);
+    createSelect(parent);
+
+    parent = "box-email";
+    createDiv(parent);
+    createLabel("Email", parent);
+    type = "email";
+    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
+    createInput(type, pattern, parent);
+
+    parent = "box-telefone";
+    createDiv(parent);
+    createLabel("Telefone", parent);
+    type = "text";
+    pattern="[0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}"
+    createInput(type, pattern, parent);
+
+    createButton("CADASTRAR");
+
   } else if (page == "agenda") {
     document.getElementById("page-home").style.display = "none";
     document.getElementById("page-cadastro").style.display = "none";
@@ -75,10 +116,11 @@ var showPage = function(page) {
 }
 
 
-var createSelect = function() {
+var createSelect = function(parent) {
 
 
     var menu = document.createElement("select");
+    menu.setAttribute("class", "InputAddOn-field");
     var opt1 = document.createElement("option");
     var opt2 = document.createElement("option");
 
@@ -94,6 +136,39 @@ var createSelect = function() {
     menu.appendChild(opt1);
     menu.appendChild(opt2);
 
-    document.getElementById("asd").appendChild(menu);
+    document.getElementById(parent).appendChild(menu);
 
+}
+
+var createLabel = function(title, parent) {
+  var label=document.createElement("label");
+  var text = document.createTextNode(title);
+  label.setAttribute("class","InputAddOn-item");
+  label.appendChild(text);
+  document.getElementById(parent).appendChild(label);
+}
+
+var createInput = function(type, pattern, parent) {
+  var input=document.createElement("input");
+  input.setAttribute("type",type);
+  input.setAttribute("class","InputAddOn-field");
+  if (pattern)
+    input.setAttribute("pattern",pattern);
+
+  document.getElementById(parent).appendChild(input);
+}
+
+var createDiv = function(id) {
+  var div = document.createElement("div");
+  div.setAttribute("id",id);
+  div.setAttribute("class","InputAddOn");
+  document.getElementById("main-page").appendChild(div);
+}
+
+var createButton = function(title) {
+  var button = document.createElement("input");
+  button.setAttribute("type","submit");
+  button.setAttribute("value",title);
+  button.setAttribute("class","button send");
+  document.getElementById("main-page").appendChild(button);
 }
